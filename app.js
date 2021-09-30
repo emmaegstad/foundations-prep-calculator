@@ -3,6 +3,7 @@ import { add } from './calculations.js';
 import { sub } from './calculations.js';
 import { mult } from './calculations.js';
 import { div } from './calculations.js';
+import { mod } from './calculations.js';
 
 // reference necessary DOM elements
 const addNum1 = document.querySelector('.calc-add__num1');
@@ -25,6 +26,10 @@ const divNum2 = document.querySelector('.calc-div__num2');
 const divButt = document.querySelector('.calc-div__button');
 let divAnswer = document.querySelector('.calc-div__answer');
 
+const modNum1 = document.querySelector('.calc-mod__num1');
+const modNum2 = document.querySelector('.calc-mod__num2');
+const modButt = document.querySelector('.calc-mod__button');
+let modAnswer = document.querySelector('.calc-mod__answer');
 
 
 //set event listeners
@@ -54,5 +59,12 @@ divButt.addEventListener('click', () => {
   const num2 = Number(divNum2.value);
   const answer = div(num1, num2);
   divAnswer.textContent = answer;
+});
+
+modButt.addEventListener('click', () => {
+  const num1 = Number(modNum1.value);
+  const num2 = Number(modNum2.value);
+  const answer = mod(num1, num2);
+  modAnswer.textContent = answer;
 });
 
