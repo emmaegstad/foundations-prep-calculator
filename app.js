@@ -2,6 +2,7 @@
 import { add } from './calculations.js';
 import { sub } from './calculations.js';
 import { mult } from './calculations.js';
+import { div } from './calculations.js';
 
 // reference necessary DOM elements
 const addNum1 = document.querySelector('.calc-add__num1');
@@ -18,6 +19,11 @@ const multNum1 = document.querySelector('.calc-mult__num1');
 const multNum2 = document.querySelector('.calc-mult__num2');
 const multButt = document.querySelector('.calc-mult__button');
 let multAnswer = document.querySelector('.calc-mult__answer');
+
+const divNum1 = document.querySelector('.calc-div__num1');
+const divNum2 = document.querySelector('.calc-div__num2');
+const divButt = document.querySelector('.calc-div__button');
+let divAnswer = document.querySelector('.calc-div__answer');
 
 
 
@@ -41,5 +47,12 @@ multButt.addEventListener('click', () => {
   const num2 = Number(multNum2.value);
   const answer = mult(num1, num2);
   multAnswer.textContent = answer;
+});
+
+divButt.addEventListener('click', () => {
+  const num1 = Number(divNum1.value);
+  const num2 = Number(divNum2.value);
+  const answer = div(num1, num2);
+  divAnswer.textContent = answer;
 });
 
