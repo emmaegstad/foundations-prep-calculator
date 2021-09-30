@@ -5,6 +5,7 @@ import { mult } from './calculations.js';
 import { div } from './calculations.js';
 import { mod } from './calculations.js';
 import { int } from './calculations.js';
+import { pt } from './calculations.js';
 
 // reference necessary DOM elements
 const addNum1 = document.querySelector('.calc-add__num1');
@@ -36,6 +37,11 @@ const intNum1 = document.querySelector('.calc-int__num1');
 const intNum2 = document.querySelector('.calc-int__num2');
 const intButt = document.querySelector('.calc-int__button');
 let intAnswer = document.querySelector('.calc-int__answer');
+
+const ptNum1 = document.querySelector('.calc-pt__num1');
+const ptNum2 = document.querySelector('.calc-pt__num2');
+const ptButt = document.querySelector('.calc-pt__button');
+let ptAnswer = document.querySelector('.calc-pt__answer');
 
 
 //set event listeners
@@ -79,5 +85,12 @@ intButt.addEventListener('click', () => {
   const num2 = Number(intNum2.value);
   const answer = int(num1, num2);
   intAnswer.textContent = answer;
+});
+
+ptButt.addEventListener('click', () => {
+  const num1 = Number(ptNum1.value);
+  const num2 = Number(ptNum2.value);
+  const answer = pt(num1, num2);
+  ptAnswer.textContent = answer;
 });
 
