@@ -3,6 +3,7 @@ import { add } from '../calculations.js';
 import { sub } from '../calculations.js';
 import { mult } from '../calculations.js';
 import { div } from '../calculations.js';
+import { mod } from '../calculations.js';
 
 const test = QUnit.test;
 
@@ -55,6 +56,20 @@ test('test div function', (expect) => {
 
   //Act
   const actual = div(input1, input2);
+
+  //Assert
+  expect.equal(actual, expected);
+
+});
+
+test('test mod function', (expect) => {
+  //Arrange
+  const input1 = 27;
+  const input2 = 4;
+  const expected = 3;
+
+  //Act
+  const actual = mod(input1, input2);
 
   //Assert
   expect.equal(actual, expected);
