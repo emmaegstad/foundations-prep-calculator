@@ -25,3 +25,7 @@ export function int(x, y) {
   else
     return Math.ceil(result);
 }
+
+export function pt(sideA, sideB) {
+  return Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideB, 2));
+}

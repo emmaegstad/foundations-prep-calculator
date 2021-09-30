@@ -5,6 +5,7 @@ import { mult } from '../calculations.js';
 import { div } from '../calculations.js';
 import { mod } from '../calculations.js';
 import { int } from '../calculations.js';
+import { pt } from '../calculations.js';
 
 const test = QUnit.test;
 
@@ -85,6 +86,20 @@ test('test int function', (expect) => {
 
   //Act
   const actual = int(input1, input2);
+
+  //Assert
+  expect.equal(actual, expected);
+
+});
+
+test('test pt function', (expect) => {
+  //Arrange
+  const input1 = 4;
+  const input2 = 3;
+  const expected = 5;
+
+  //Act
+  const actual = pt(input1, input2);
 
   //Assert
   expect.equal(actual, expected);
